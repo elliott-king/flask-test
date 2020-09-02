@@ -6,6 +6,7 @@ services:
     labels:
       shipyard.route: '/'
     build: '.'
+    container_name: 'gateway'
     environment:
       DATABASE_URL: 'postgres://obscure-user:obscure-password@db/app'
       DEV: ${DEV}

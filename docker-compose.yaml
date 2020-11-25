@@ -48,5 +48,13 @@ services:
     ports:
       - '6379'
 
+  nginx:
+    labels:
+      shipyard.route.one: '/one'
+      shipyard.route.two: '/two'
+    image: 'nginx'
+    ports:
+      - '80'
+
 volumes:
   postgres:

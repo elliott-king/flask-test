@@ -6,6 +6,7 @@ services:
     labels:
       shipyard.route: '/'
     build: '.'
+    image: 'gcr.io/shipyard-test/flask-web'
     environment:
       DATABASE_URL: 'postgres://obscure-user:obscure-password@postgres/app'
       DEV: ${DEV}

@@ -6,13 +6,12 @@ services:
     labels:
       shipyard.route: '/'
       shipyard.liveness.http.path: '/health'
-      shipyard.liveness.http.headers: 'Host: probe-test'
-      shipyard.liveness.initialDelay: '30'
+      shipyard.liveness.http.headers: '{"Host": "probe-test"}'
+      shipyard.liveness.initial_delay: '30'
       shipyard.liveness.period: '30'
       shipyard.readiness.http.path: '/health'
-      shipyard.readiness.http.headers: 'Host: probe-test'
-      shipyard.readiness.initialDelay: '30'
-      shipyard.readiness.period: '30'
+      shipyard.readiness.http.headers: '{"Host": "probe-test"}'
+      shipyard.readiness.initial_delay: 30
     build: '.'
     environment:
       DATABASE_URL: 'postgres://obscure-user:obscure-password@postgres/app'
